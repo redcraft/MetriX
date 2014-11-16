@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			},
 			build: {
 				src: ['src/main/webapp/libs/*.js', 'src/main/webapp/app.js', 'src/main/webapp/components/*.js'],
-				dest: 'src/main/webapp/app.min.js'
+				dest: 'src/main/webapp/min/app.min.js'
 			}
 		}
 	});

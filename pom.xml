@@ -119,30 +119,47 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <groupId>org.apache.maven.plugins</groupId>
-                <version>2.5</version>
-                <configuration>
-                    <packagingExcludes>
-                        index.html,
-                        app.js,
-                        libs/**,
-                        min/**
-                    </packagingExcludes>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp/min</directory>
-                            <includes>
-                                <include>**</include>
-                            </includes>
-                            <targetPath></targetPath>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>heroku</id>
+            <activation>
+                <property>
+                    <name>env.DYNO</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <version>2.5</version>
+                        <configuration>
+                            <packagingExcludes>
+                                libs/**,
+                                min/**
+                            </packagingExcludes>
+                            <warSourceExcludes>
+                                index.html,
+                                app.js,
+                            </warSourceExcludes>
+                            <webResources>
+                                <resource>
+                                    <directory>src/main/webapp/min</directory>
+                                    <includes>
+                                        <include>**</include>
+                                    </includes>
+                                    <targetPath></targetPath>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <properties>
         <jersey.version>1.18.1</jersey.version>
