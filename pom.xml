@@ -139,7 +139,8 @@
                         <configuration>
                             <packagingExcludes>
                                 libs/**,
-                                min/**
+                                min/**,
+                                components/**
                             </packagingExcludes>
                             <warSourceExcludes>
                                 index.html,
@@ -149,7 +150,8 @@
                                 <resource>
                                     <directory>src/main/webapp/min</directory>
                                     <includes>
-                                        <include>**</include>
+                                        <include>app.min.js</include>
+                                        <include>index.min.html</include>
                                     </includes>
                                     <targetPath></targetPath>
                                 </resource>
