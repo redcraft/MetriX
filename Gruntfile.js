@@ -5,7 +5,10 @@ module.exports = function(grunt) {
 		ngtemplates:  {
 			metrix:        {
 				src:      'src/main/webapp/components/*.html',
-				dest:     'src/main/webapp/min/templates.js'
+				dest:     'src/main/webapp/min/templates.js',
+				options:  {
+					url:    function(url) { return url.replace('src/main/webapp/', ''); }
+				}
 			}
 		},
 		uglify: {
