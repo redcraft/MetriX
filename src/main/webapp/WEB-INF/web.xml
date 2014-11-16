@@ -17,4 +17,9 @@
         <listener-class>net.redcraft.metrix.di.DIConfig</listener-class>
     </listener>
 
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.min.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>

@@ -1,0 +1,26 @@
+{
+  "name": "metrix",
+  "version": "1.0.0",
+  "description": "Visualization of Dropbox account statistics",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redcraft/MetriX.git"
+  },
+  "keywords": [
+    "dropbox"
+  ],
+  "author": "Maxim RED Gurkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redcraft/MetriX/issues"
+  },
+  "homepage": "https://github.com/redcraft/MetriX",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.6.0"
+  }
+}

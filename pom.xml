@@ -81,7 +81,7 @@
     </dependencies>
 
     <build>
-        <finalName>aisling</finalName>
+        <finalName>metrix</finalName>
         <plugins>
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
@@ -118,6 +118,28 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>2.5</version>
+                <configuration>
+                    <packagingExcludes>
+                        index.html,
+                        app.js,
+                        libs/**,
+                        min/**
+                    </packagingExcludes>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/min</directory>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                            <targetPath></targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
