@@ -53,7 +53,7 @@ public class AuthAPI {
 
 	@Nonnull
 	private String getRequestUrl(HttpServletRequest request) {
-		return httpsOnly ? "https" : request.getScheme() + "://" +
+		return (httpsOnly ? "https" : request.getScheme()) + "://" +
 				request.getServerName() +
 				("http".equals(request.getScheme()) && request.getServerPort() == 80 ||
 						"https".equals(request.getScheme()) && request.getServerPort() == 443 ?
