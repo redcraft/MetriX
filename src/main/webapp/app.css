@@ -1,0 +1,151 @@
+body {
+    font-family: 'Open Sans', 'lucida grande', 'Segoe UI', arial, verdana, 'lucida sans unicode', tahoma, sans-serif;
+}
+
+#aisling-box, #page-header {
+    width: 990px;
+    margin: auto
+}
+
+#page-header {
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+#account-header {
+    float: right;
+    position: relative;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    margin-top: -250px; /* half of #content height*/
+    left: 0;
+    width: 100%;
+}
+
+#content {
+    width: 624px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 395px;
+}
+
+#loginPageIntro {
+    /*padding-top: 110px;*/
+    text-align: center;
+}
+
+#loginPageIntro p {
+    color: #73bffc;
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#loginPageIntro .loginButton {
+    border-color: #73bffc;
+    border-width: 2px;
+    border-radius: 20px;
+    width: 290px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+#loginPageIntro .loginButton:hover {
+    background-color: #f3f9fe;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #73bffc;
+    margin-bottom: 20px;
+}
+
+.tc-chart-js-legend {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.tc-chart-js-legend li {
+    display: block;
+    float: left;
+    clear: both;
+    padding: 10px;
+}
+
+.tc-chart-js-legend li span {
+    width: 25px;
+    height: 25px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.folderIcon, .fileIcon {
+    width: 29px;
+    height: 29px;
+    margin-right: 11px;
+}
+
+.folderIcon {
+    background-image: url("/img/folder.png");
+}
+
+.fileIcon {
+    background-image: url("/img/file.png");
+}
+
+.arrowIcon {
+    background-image: url("/img/arrow.png");
+    background-repeat: no-repeat;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+.dropbox {
+    font-family: 'Open Sans', 'lucida grande', 'Segoe UI', arial, verdana, 'lucida sans unicode', tahoma, sans-serif;
+
+}
+
+table.dropboxTable th {
+    font-size: 12px;
+    font-weight: normal;
+    color: #AAAAAA;
+}
+
+table.dropboxTable td {
+    font-size: 13px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
+}
