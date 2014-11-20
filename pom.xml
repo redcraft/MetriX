@@ -164,6 +164,7 @@
                             <warSourceExcludes>
                                 index.html,
                                 app.js,
+                                app.less
                             </warSourceExcludes>
                             <webResources>
                                 <resource>

@@ -3,9 +3,9 @@
 (function () {
 	var app = angular.module('metrix');
 
-	app.directive('abHeader', function () {
+	app.directive('metrixHeader', function () {
 		return {
-			restrict: 'E',
+			restrict: 'C',
 			templateUrl: 'components/header-template.html',
 			controller: ['$scope', 'userInfoProvider',
 				function ($scope, userInfoProvider) {

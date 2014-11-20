@@ -4,3 +4,4 @@ metrix.iml
 node_modules
 src/main/webapp/min/templates.js
 src/main/webapp/min/app.min.js
+src/main/webapp/app.css

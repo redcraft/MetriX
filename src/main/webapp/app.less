@@ -1,0 +1,120 @@
+body {
+	font-family: 'Open Sans', 'lucida grande', 'Segoe UI', arial, verdana, 'lucida sans unicode', tahoma, sans-serif;
+	font-size: 13px;
+}
+
+#metrix-view {
+	width: 990px;
+	margin: auto
+}
+
+.metrix-header {
+	padding-bottom: 16px;
+	padding-top: 16px;
+	&:extend(#metrix-view);
+
+	#header-menu {
+		float: right;
+		position: relative;
+	}
+}
+
+#login-container {
+	@login-text-color: #73bffc;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -250px;
+	left: 0;
+	width: 100%;
+
+	#login-content {
+		width: 624px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 395px;
+
+		text-align: center;
+
+		p {
+			color: @login-text-color;
+			font-size: 24px;
+			font-weight: lighter;
+			letter-spacing: 2px;
+			margin-bottom: 20px;
+		}
+
+		.login-button {
+			border-color: @login-text-color;
+			border-width: 2px;
+			border-radius: 20px;
+			width: 290px;
+			margin-top: 6px;
+			margin-right: 10px;
+			&:hover {
+				background-color: #f3f9fe;
+			}
+		}
+
+		h1 {
+			font-size: 32px;
+			font-weight: bold;
+			color: @login-text-color;
+			margin-bottom: 20px;
+		}
+
+	}
+}
+
+#dropbox-item-list {
+	th {
+		font-size: 12px;
+		font-weight: normal;
+		color: #AAAAAA;
+	}
+
+	.icon() {
+		width: 29px;
+		height: 29px;
+		margin-right: 11px;
+	}
+
+	.folder-icon {
+		.icon;
+		background-image: url("/img/folder.png");
+	}
+
+	.file-icon {
+		.icon;
+		background-image: url("/img/file.png");
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+.blink {
+	animation: blink 1s step-start 0s infinite;
+	-webkit-animation: blink 1s step-start 0s infinite;
+}

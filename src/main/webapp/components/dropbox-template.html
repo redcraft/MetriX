@@ -1,4 +1,4 @@
-<ab-header></ab-header>
+<div class="metrix-header"></div>
 <div class="dropbox">
     <div style="width:30%; float: left">
         <p style="width:100%">Processed: {{dropbox.total | bytes}} of {{userInfo.quota.normal
@@ -16,7 +16,7 @@
     </div>
     <div style="width:70%; float: left">
         <p style="width:100%"> Path: {{dropbox.node.path}}.</p>
-        <table class="table dropboxTable" >
+        <table id="dropbox-item-list" class="table">
             <thead>
             <tr>
                 <th>Name</th>
@@ -29,10 +29,10 @@
             <tr ng-repeat="node in dropbox.node.children | orderBy:'size':true">
 
                 <td ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'"><img src="/img/placeholder.gif"
-                                                                                        class="folderIcon"><a href=""
+                                                                                        class="folder-icon"><a href=""
                                                                                                               ng-click="setPath(node.path)">{{node.path}}</a>
                 </td>
-                <td ng-if="node.type == 'FILE'"><img src="/img/placeholder.gif" class="fileIcon">{{node.path}}</td>
+                <td ng-if="node.type == 'FILE'"><img src="/img/placeholder.gif" class="file-icon">{{node.path}}</td>
 
                 <td>{{node.size | bytes}}</td>
 
