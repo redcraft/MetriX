@@ -1,18 +1,18 @@
 <div class="metrix-header"></div>
 <div id="dropbox">
-    <div class="col-md-3">
+    <div id="charts-panel" class="col-md-3">
         <div id="folder-chart">
+            <canvas tc-chartjs-pie chart-options="chartOptions" chart-data="chartData" width="200"
+                    height="200"></canvas>
             <p>Current folder statistics</p>
-            <canvas tc-chartjs-pie chart-options="chartOptions" chart-data="chartData" width="350"
-                    height="350"></canvas>
             <p>Total: {{totalSize | bytes}}</p>
         </div>
 
         <div id="global-progress-bar">
-            <p>Complete {{dropbox.total / userInfo.quota.normal * 100 | number : 1}}%</p>
             <div>
                 <canvas  tc-chartjs-doughnut chart-options="chartOptions2" chart-data="chartData2"></canvas>
             </div>
+            <p>Complete {{dropbox.total / userInfo.quota.normal * 100 | number : 1}}%</p>
             <p>{{dropbox.total | bytes}} of {{userInfo.quota.normal | bytes}}</p>
         </div>
 
@@ -21,7 +21,7 @@
         <table id="dropbox-item-list" class="table">
             <thead>
             <tr>
-                <th>Name</th>
+                <th style="padding-left: 15px">Name</th>
                 <th>Size</th>
                 <th></th>
             </tr>

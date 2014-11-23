@@ -14,7 +14,7 @@ import java.util.Queue;
  */
 public class ColorGenerator {
 	private static final List<String> DEFAULT_COLORS = ImmutableList.of(
-			"#0074D9", "#7FDBFF", "#39CCCC", "#3D9970", "#2ECC40", "#01FF70",
+			"#73bffc", "#7FDBFF", "#39CCCC", "#3D9970", "#2ECC40", "#01FF70",
 			"#FFDC00", "#FF851B", "#FF4136", "#85144B", "#F012BE", "#B10DC9"
 	);
 	private static final String[] LATTERS = "0123456789ABCDEF".split("");

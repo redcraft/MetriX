@@ -31,8 +31,7 @@
 					animationSteps: 100,
 					animationEasing: 'easeOutQuart',
 					animateRotate: false,
-					animateScale: false,
-					//legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+					animateScale: false
 
 				};
 
@@ -45,8 +44,7 @@
 					animationSteps : 100,
 					animationEasing : 'easeOutQuart',
 					animateRotate : false,
-					animateScale : false,
-					//legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+					animateScale : false
 
 				};
 
@@ -86,13 +84,13 @@
 					$scope.chartData2 = [
 						{
 							value: $scope.userInfo.quota.normal - $scope.dropbox.total,
-							color:'#f5f5f5',
+							color:'#f3f9fe',
 							highlight: '#FF5A5E',
 							label: 'Red'
 						},
 						{
 							value: $scope.dropbox.total,
-							color: '#AAAAAA',
+							color: '#73bffc',
 							highlight: '#5AD3D1',
 							label: 'Green'
 						}

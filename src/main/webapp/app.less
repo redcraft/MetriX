@@ -4,6 +4,14 @@ body {
 	color: #3D464D;
 }
 
+a {
+	@link-color: #2895F1;
+	color: @link-color;
+	&:hover {
+		color: @link-color;
+	}
+}
+
 #metrix-view {
 	width: 990px;
 	margin: auto
@@ -26,8 +34,14 @@ body {
 	}
 
 	#user-location {
+		padding-left: 27px;
 		span {
+			padding-left: 3px;
 			font-size: 18px;
+		}
+		img {
+			width: 32px;
+			height: 32px;
 		}
 	}
 
@@ -93,21 +107,26 @@ body {
 		color: #AAAAAA;
 	}
 
-	#folder-chart {
-		p {
-			text-align: center;
-			margin-top: 9px;
-			.header-style;
-		}
-	}
+	#charts-panel {
 
-	#global-progress-bar {
-		margin-top: 40px;
-		position: relative;
-		p {
-			text-align: center;
-			margin-top: 9px;
-			.header-style;
+		padding-top: 50px;
+
+		#folder-chart {
+			p {
+				text-align: center;
+				margin-top: 9px;
+				.header-style;
+			}
+		}
+
+		#global-progress-bar {
+			margin-top: 40px;
+			position: relative;
+			p {
+				text-align: center;
+				margin-top: 9px;
+				.header-style;
+			}
 		}
 	}
 
