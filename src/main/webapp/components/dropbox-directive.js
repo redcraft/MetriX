@@ -55,6 +55,7 @@
 				var getFolderInfo = function (dropbox) {
 					$scope.dropbox = dropbox;
 					var chartData = [];
+					var pathSections = [{name: "Dropbox Root", path: "/"}];
 					var totalSize = 0;
 					var fileSize = 0;
 
@@ -78,8 +79,18 @@
 						highlight: '#FF5A5E',
 						label: 'Files'
 					});
+
+					var activePath = "";
+					angular.forEach(dropbox.node.path.split("/"), function(value, key) {
+						if(value != "") {
+							activePath += ("/" + value);
+							this.push({name: value, path: activePath});
+						}
+					}, pathSections);
+
 					$scope.chartData = chartData;
 					$scope.totalSize = totalSize;
+					$scope.pathSections = pathSections;
 
 					$scope.chartData2 = [
 						{
@@ -95,6 +106,7 @@
 							label: 'Green'
 						}
 					];
+
 				};
 
 				userInfoProvider.getAsyncUserInfo().then(function (data) {
@@ -108,6 +120,10 @@
 
 				$scope.resetStats = function () {
 					userInfoProvider.resetStats();
+				}
+
+				$scope.signOut = function () {
+					userInfoProvider.logout();
 				}
 
 				var stop = $interval(function () {

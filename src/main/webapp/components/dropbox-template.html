@@ -1,4 +1,23 @@
-<div class="metrix-header"></div>
+<div class="metrix-header">
+    <div class="col-md-3">
+        <img src="img/placeholder.gif">
+    </div>
+    <div id="user-location" class="col-md-6">
+        <a href="/">
+            <img src="img/metrix_small.png">
+        </a>
+        <span ng-repeat="section in pathSections">
+            <span ng-if="$last" >{{section.name}} </span>
+            <span></apan></apn><a ng-if="!$last" href="" ng-click="setPath(section.path)">{{section.name}} </a></span>
+            <span ng-if="!$last" >/</span>
+        </span>
+    </div>
+    <div id="header-menu" class="col-md-3">
+    <span>
+        <a href="" ng-click="signOut()">Sign out {{userInfo.displayName}}</a>
+    </span>
+    </div>
+</div>
 <div id="dropbox">
     <div id="charts-panel" class="col-md-3">
         <div id="folder-chart">
