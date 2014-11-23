@@ -32,9 +32,27 @@
 					animationEasing: 'easeOutQuart',
 					animateRotate: false,
 					animateScale: false,
-					legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+					//legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
 
 				};
+
+				$scope.chartOptions2 = {
+					responsive: true,
+					segmentShowStroke : true,
+					segmentStrokeColor : '#fff',
+					segmentStrokeWidth : 2,
+					percentageInnerCutout : 50, // This is 0 for Pie charts
+					animationSteps : 100,
+					animationEasing : 'easeOutQuart',
+					animateRotate : false,
+					animateScale : false,
+					//legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+
+				};
+
+				$scope.chartData2 = [
+
+				];
 
 				var getFolderInfo = function (dropbox) {
 					$scope.dropbox = dropbox;
@@ -64,6 +82,21 @@
 					});
 					$scope.chartData = chartData;
 					$scope.totalSize = totalSize;
+
+					$scope.chartData2 = [
+						{
+							value: $scope.userInfo.quota.normal - $scope.dropbox.total,
+							color:'#f5f5f5',
+							highlight: '#FF5A5E',
+							label: 'Red'
+						},
+						{
+							value: $scope.dropbox.total,
+							color: '#AAAAAA',
+							highlight: '#5AD3D1',
+							label: 'Green'
+						}
+					];
 				};
 
 				userInfoProvider.getAsyncUserInfo().then(function (data) {

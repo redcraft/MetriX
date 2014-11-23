@@ -1,9 +1,13 @@
-<span class="home-icon-container">
+<div class="col-md-3">
     <a href="/">
-        <img width="36" src="img/dropbox.png">
+        <img width="36" src="img/metrix_small.png">
     </a>
-</span>
-
-<div id="header-menu">
-    <a href="" ng-click="signOut()">Sign out {{userInfo.displayName}}</a>
+</div>
+<div id="user-location" class="col-md-6">
+    <span>Dropbox Path: {{dropbox.node.path}}</span>
+</div>
+<div id="header-menu" class="col-md-3">
+    <span>
+        <a href="" ng-click="signOut()">Sign out {{userInfo.displayName}}</a>
+    </span>
 </div>

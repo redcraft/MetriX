@@ -1,6 +1,7 @@
 body {
 	font-family: 'Open Sans', 'lucida grande', 'Segoe UI', arial, verdana, 'lucida sans unicode', tahoma, sans-serif;
 	font-size: 13px;
+	color: #3D464D;
 }
 
 #metrix-view {
@@ -9,13 +10,31 @@ body {
 }
 
 .metrix-header {
-	padding-bottom: 16px;
-	padding-top: 16px;
+	@header-height: 36px;
+
+	margin-top: 16px;
+	margin-bottom: 60px;
+	padding-bottom: 1px;
 	&:extend(#metrix-view);
 
+	div {
+		height: @header-height;
+		span {
+			line-height: @header-height;
+			vertical-align: middle;
+		}
+	}
+
+	#user-location {
+		span {
+			font-size: 18px;
+		}
+	}
+
 	#header-menu {
-		float: right;
-		position: relative;
+		span {
+			float: right;
+		}
 	}
 }
 
@@ -66,55 +85,90 @@ body {
 	}
 }
 
-#dropbox-item-list {
-	th {
+#dropbox {
+
+	.header-style() {
 		font-size: 12px;
 		font-weight: normal;
 		color: #AAAAAA;
 	}
 
-	.icon() {
-		width: 29px;
-		height: 29px;
-		margin-right: 11px;
+	#folder-chart {
+		p {
+			text-align: center;
+			margin-top: 9px;
+			.header-style;
+		}
 	}
 
-	.folder-icon {
-		.icon;
-		background-image: url("/img/folder.png");
+	#global-progress-bar {
+		margin-top: 40px;
+		position: relative;
+		p {
+			text-align: center;
+			margin-top: 9px;
+			.header-style;
+		}
 	}
 
-	.file-icon {
-		.icon;
-		background-image: url("/img/file.png");
-	}
-}
+	#dropbox-item-list {
+		th {
+			.header-style;
+		}
 
-@keyframes blink {
-	0% {
-		opacity: 1.0;
-	}
-	50% {
-		opacity: 0.0;
-	}
-	100% {
-		opacity: 1.0;
-	}
-}
+		td{
+			.legend {
+				width: 5px;
+				height: 20px;
+				float: left;
+				margin-right: 5px;
+				margin-top: 6px;
+			}
+		}
 
-@-webkit-keyframes blink {
-	0% {
-		opacity: 1.0;
-	}
-	50% {
-		opacity: 0.0;
-	}
-	100% {
-		opacity: 1.0;
-	}
-}
+		.icon() {
+			width: 29px;
+			height: 29px;
+			margin-right: 11px;
+		}
 
-.blink {
-	animation: blink 1s step-start 0s infinite;
-	-webkit-animation: blink 1s step-start 0s infinite;
+		.folder-icon {
+			.icon;
+			background-image: url("/img/folder.png");
+		}
+
+		.file-icon {
+			.icon;
+			background-image: url("/img/file.png");
+		}
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 1.0;
+		}
+		50% {
+			opacity: 0.0;
+		}
+		100% {
+			opacity: 1.0;
+		}
+	}
+
+	@-webkit-keyframes blink {
+		0% {
+			opacity: 1.0;
+		}
+		50% {
+			opacity: 0.0;
+		}
+		100% {
+			opacity: 1.0;
+		}
+	}
+
+	.blink {
+		animation: blink 1s step-start 0s infinite;
+		-webkit-animation: blink 1s step-start 0s infinite;
+	}
 }
