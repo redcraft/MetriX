@@ -25,13 +25,15 @@ public class RunnableNode implements Runnable {
 	private final DbxClient client;
 	private final Executor executor;
 	private boolean complete = false;
+	private final int priority;
 
-	public RunnableNode(RunnableNode parent, String path, DbxClient client, Executor executor) {
+	public RunnableNode(RunnableNode parent, String path, int priority, DbxClient client, Executor executor) {
 		this.path = path;
 		this.parent = parent;
 		this.client = client;
 		this.executor = executor;
 		this.children = new ArrayList<>();
+		this.priority = priority;
 	}
 
 	private void addChildrenSize(long size) {
@@ -95,7 +97,7 @@ public class RunnableNode implements Runnable {
 				size += file.asFile().numBytes;
 			}
 			else {
-				RunnableNode child = new RunnableNode(this, file.path, client, executor);
+				RunnableNode child = new RunnableNode(this, file.path, priority + 1, client, executor);
 				children.add(child);
 				executor.execute(child);
 			}
@@ -131,5 +133,9 @@ public class RunnableNode implements Runnable {
 
 	public boolean isComplete() {
 		return complete;
+	}
+
+	public int getPriority() {
+		return priority;
 	}
 }

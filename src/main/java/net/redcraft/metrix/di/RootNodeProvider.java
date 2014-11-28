@@ -37,7 +37,7 @@ public class RootNodeProvider implements Provider<RunnableNode> {
 		HttpSession session = request.getSession();
 		RunnableNode runnableNode = (RunnableNode) session.getAttribute(RunnableNode.class.getName());
 		if (runnableNode == null) {
-			runnableNode = new RunnableNode(null, "/", dbxClient, executor);
+			runnableNode = new RunnableNode(null, "/", 0, dbxClient, executor);
 			executor.execute(runnableNode);
 			session.setAttribute(RunnableNode.class.getName(), runnableNode);
 			log.debug("Root node created");
