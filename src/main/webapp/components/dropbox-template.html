@@ -1,5 +1,5 @@
 <div class="metrix-header">
-    <div class="col-md-3">
+    <div class="col-md-2">
         <img src="img/placeholder.gif">
     </div>
     <div id="user-location" class="col-md-6">
@@ -12,18 +12,21 @@
             <span ng-if="!$last" >/</span>
         </span>
     </div>
-    <div id="header-menu" class="col-md-3">
+    <div id="header-menu" class="col-md-2">
     <span>
         <a href="" ng-click="signOut()">Sign out {{userInfo.displayName}}</a>
     </span>
     </div>
+    <div class="col-md-2">
+        <img src="img/placeholder.gif">
+    </div>
 </div>
 <div id="dropbox">
-    <div id="charts-panel" class="col-md-3">
+    <div id="charts-panel" class="col-md-2">
         <div id="folder-chart">
             <canvas tc-chartjs-pie chart-options="chartOptions" chart-data="chartData" width="200"
                     height="200"></canvas>
-            <p>Current folder statistics</p>
+            <p>Current folder statistic</p>
             <p>Total: {{totalSize | bytes}}</p>
         </div>
 
@@ -36,7 +39,7 @@
         </div>
 
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
         <table id="dropbox-item-list" class="table">
             <thead>
             <tr>
@@ -65,5 +68,8 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="col-md-2">
+        <img src="img/placeholder.gif">
     </div>
 </div>
