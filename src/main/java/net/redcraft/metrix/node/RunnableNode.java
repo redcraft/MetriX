@@ -4,6 +4,7 @@ import com.dropbox.core.DbxClient;
 import com.dropbox.core.DbxEntry;
 import com.dropbox.core.DbxException;
 import net.redcraft.metrix.ColorGenerator;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -135,6 +136,7 @@ public class RunnableNode implements Runnable {
 		return complete;
 	}
 
+	@JsonIgnore
 	public int getPriority() {
 		return priority;
 	}
