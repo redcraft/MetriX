@@ -5,7 +5,7 @@
 
 	app.filter('bytes', function () {
 		return function (bytes, precision) {
-			if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+			if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes < 0.0001) return '-';
 			if (typeof precision === 'undefined') precision = 1;
 			var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
 				number = Math.floor(Math.log(bytes) / Math.log(1024));
