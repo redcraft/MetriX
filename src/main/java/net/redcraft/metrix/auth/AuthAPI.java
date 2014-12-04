@@ -33,7 +33,7 @@ public class AuthAPI {
 	private static final String SESSION_KEY = "dropbox-auth-csrf-token";
 	private static final String DROPBOX_AUTH = "dropbox-auth";
 
-	private static final String CLIENT_IDENTIFIER = "Aisling-Box";
+	private static final String CLIENT_IDENTIFIER = "MetriX";
 	private static final DbxRequestConfig REQUEST_CONFIG = new DbxRequestConfig(CLIENT_IDENTIFIER, Locale.getDefault().toString());
 
 	private final String apiKey;

@@ -11,10 +11,10 @@ var app = angular.module(
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $routeProvider.
         when('/', {template: '<dropbox></dropbox>', reloadOnSearch: false}).
-        when('/login', {template: '<aisling-login></aisling-login>', reloadOnSearch: false}).
+        when('/login', {template: '<login></login>', reloadOnSearch: false}).
         when('/error', {template: 'error', reloadOnSearch: false}).
         otherwise({ redirectTo: '/login' });
-    //$httpProvider.interceptors.push('authInterceptor');
+    $httpProvider.interceptors.push('authInterceptor');
 }]);
 
 app.run(['$rootScope', '$location', 'userInfoProvider', function($rootScope, $location, userInfoProvider) {

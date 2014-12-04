@@ -3,7 +3,7 @@
 (function () {
 	var app = angular.module('metrix');
 
-	app.directive('aislingLogin', function () {
+	app.directive('login', function () {
 		return {
 			restrict: 'E',
 			templateUrl: 'components/login-template.html',
