@@ -53,11 +53,11 @@
             <tbody>
             <tr ng-repeat="node in dropbox.node.children | orderBy:'size':true">
 
-                <td ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">
+                <td class="node-name" ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">
                     <div class="legend" ng-style="{'background-color' : node.color}"></div>
                     <img src="/img/placeholder.gif" class="folder-icon"><a href="" ng-click="setPath(node.path)">{{node.path}}</a>
                 </td>
-                <td ng-if="node.type == 'FILE'">
+                <td class="node-name" ng-if="node.type == 'FILE'">
                     <div class="legend"  ng-style="{'background-color' : node.color}"></div>
                     <img src="/img/placeholder.gif" class="file-icon">{{node.path}}
                 </td>
