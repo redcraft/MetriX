@@ -55,23 +55,13 @@
 			return deferred.promise;
 		};
 
-		var resetStats = function (force) {
-			$http({method: 'DELETE', url: '/api/user/stats'}).
-				success(function (data) {
-
-				}).
-				error(function (data, status) {
-					console.log("ERROR: ", status, data);
-				});
-		};
 
 		return {
 			invalidateUserInfo: invalidateUserInfo,
 			getAsyncUserInfo: getAsyncUserInfo,
 			login: login,
 			logout: logout,
-			getDropboxStats: getDropboxStats,
-			resetStats: resetStats
+			getDropboxStats: getDropboxStats
 		}
 	}]);
 
