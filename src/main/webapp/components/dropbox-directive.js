@@ -21,36 +21,24 @@
 			templateUrl: 'components/dropbox-template.html',
 			controller: ['$scope', '$location', 'userInfoProvider', '$interval', function ($scope, $location, userInfoProvider, $interval) {
 
-				$scope.chartData = [];
-				$scope.chartOptions = {
+				var folderChartOptions = {
 					responsive: true,
 					segmentShowStroke: true,
 					segmentStrokeColor: '#fff',
 					segmentStrokeWidth: 2,
-					percentageInnerCutout: 0, // This is 0 for Pie charts
+					percentageInnerCutout: 0,
 					animationSteps: 100,
 					animationEasing: 'easeOutQuart',
 					animateRotate: false,
-					animateScale: false
+					animateScale: false,
+					showTooltips: false
 
 				};
+				var globalProgressChartOptions = angular.copy(folderChartOptions);
+				globalProgressChartOptions.percentageInnerCutout = 50;
 
-				$scope.chartOptions2 = {
-					responsive: true,
-					segmentShowStroke : true,
-					segmentStrokeColor : '#fff',
-					segmentStrokeWidth : 2,
-					percentageInnerCutout : 50, // This is 0 for Pie charts
-					animationSteps : 100,
-					animationEasing : 'easeOutQuart',
-					animateRotate : false,
-					animateScale : false
-
-				};
-
-				$scope.chartData2 = [
-
-				];
+				$scope.folderChartOptions = folderChartOptions;
+				$scope.globalProgressChartOptions = globalProgressChartOptions;
 
 				var getFolderInfo = function (dropbox) {
 					$scope.dropbox = dropbox;
@@ -88,29 +76,37 @@
 						}
 					}, pathSections);
 
-					$scope.chartData = chartData;
+					if(angular.isDefined($scope.userInfo)) {
+						$scope.globalProgressData = [
+							{
+								value: $scope.userInfo.quota.normal - $scope.dropbox.total,
+								color:'#f3f9fe'
+							},
+							{
+								value: $scope.dropbox.total,
+								color: '#73bffc'
+							}
+						];
+					}
+
+					$scope.folderData = chartData;
 					$scope.totalSize = totalSize;
 					$scope.pathSections = pathSections;
 
-					$scope.chartData2 = [
-						{
-							value: $scope.userInfo.quota.normal - $scope.dropbox.total,
-							color:'#f3f9fe',
-							highlight: '#FF5A5E',
-							label: 'Red'
-						},
-						{
-							value: $scope.dropbox.total,
-							color: '#73bffc',
-							highlight: '#5AD3D1',
-							label: 'Green'
-						}
-					];
-
 				};
 
+				var stop = undefined;
+				var unwatch = undefined;
 				userInfoProvider.getAsyncUserInfo().then(function (data) {
 					$scope.userInfo = data;
+					stop = $interval(function () {
+						userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo)
+					}, 3000);
+					unwatch = $scope.$watch(function () {
+						return $location.search()
+					}, function () {
+						userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo);
+					}, true);
 				});
 
 				$scope.setPath = function (path) {
@@ -118,23 +114,9 @@
 					userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo);
 				}
 
-				$scope.resetStats = function () {
-					userInfoProvider.resetStats();
-				}
-
 				$scope.signOut = function () {
 					userInfoProvider.logout();
 				}
-
-				var stop = $interval(function () {
-					userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo)
-				}, 3000);
-
-				var unwatch = $scope.$watch(function () {
-					return $location.search()
-				}, function () {
-					userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo);
-				}, true);
 
 				$scope.$on('$destroy', function () {
 					if (angular.isDefined(stop)) {

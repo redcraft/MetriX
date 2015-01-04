@@ -24,16 +24,17 @@
 </div>
 <div id="dropbox">
     <div id="charts-panel" class="col-md-2">
-        <div id="folder-chart">
-            <canvas tc-chartjs-pie chart-options="chartOptions" chart-data="chartData" width="200"
+
+        <div ng-if="folderData" id="folder-chart">
+            <canvas tc-chartjs-pie chart-options="folderChartOptions" chart-data="folderData" width="200"
                     height="200"></canvas>
             <p>Current folder statistic</p>
             <p>Total: {{totalSize | bytes}}</p>
         </div>
 
-        <div id="global-progress-bar">
+        <div ng-if="globalProgressData" id="global-progress-bar">
             <div>
-                <canvas  tc-chartjs-doughnut chart-options="chartOptions2" chart-data="chartData2"></canvas>
+                <canvas  tc-chartjs-doughnut chart-options="globalProgressChartOptions" chart-data="globalProgressData"></canvas>
             </div>
             <p>Complete {{dropbox.total / userInfo.quota.normal * 100 | number : 1}}%</p>
             <p>{{dropbox.total | bytes}} of {{userInfo.quota.normal | bytes}}</p>
