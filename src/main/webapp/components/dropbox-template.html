@@ -3,19 +3,27 @@
     <div class="col-md-2">
         <img src="img/placeholder.gif">
     </div>
-    <div id="user-location" class="col-md-6">
-        <a href="/">
-            <img src="img/metrix_small.png">
-        </a>
-        <span ng-repeat="section in pathSections">
+    <div id="user-location" class="col-md-7">
+        <a href="/#/"><img id="logo" src="img/metrix_small.png"></a>
+        <span ng-if="pathInfo.length < 40" ng-repeat="section in pathInfo.sections">
             <span ng-if="$last" >{{section.name}} </span>
-            <span></apan></apn><a ng-if="!$last" href="" ng-click="setPath(section.path)">{{section.name}} </a></span>
+            <span><a ng-if="!$last" href="" ng-click="setPath(section.path)">{{section.name}} </a></span>
             <span ng-if="!$last" >/</span>
         </span>
+        <span  ng-if="pathInfo.length >= 40" dropdown class="dropdown">
+            <a href="" class="dropdown-toggle" dropdown-toggle>...</a>
+            <ul class="dropdown-menu">
+                <li ng-if="!$last" ng-repeat="section in pathInfo.sections">
+                    <span><a href="" ng-click="setPath(section.path)"><img src="/img/placeholder.gif" class="folder-icon">{{section.name}}</a></span>
+                </li>
+            </ul>
+            <span>/</span>
+            <span ng-init="folderName = pathInfo.sections[pathInfo.sections.length - 1].name">{{folderName.length > 40 ? folderName.substr(0, 40) + "..." : folderName}}</span>
+        </span>
     </div>
-    <div id="header-menu" class="col-md-2">
+    <div id="header-menu" class="col-md-1">
     <span>
-        <a href="" ng-click="signOut()">Sign out {{userInfo.displayName}}</a>
+        <a href="" ng-click="signOut()" >Sign out</a>
     </span>
     </div>
     <div class="col-md-2">
@@ -25,11 +33,14 @@
 <div id="dropbox">
     <div id="charts-panel" class="col-md-2">
 
-        <div ng-if="folderData" id="folder-chart">
+        <div ng-if="folderData && totalSize != 0" id="folder-chart">
             <canvas tc-chartjs-pie chart-options="folderChartOptions" chart-data="folderData" width="200"
                     height="200"></canvas>
             <p>Current folder statistic</p>
             <p>Total: {{totalSize | bytes}}</p>
+        </div>
+        <div ng-if="totalSize == 0" id="no-files">
+            <p>No files found</p>
         </div>
 
         <div ng-if="globalProgressData" id="global-progress-bar">
@@ -53,20 +64,38 @@
             <tbody>
             <tr ng-repeat="node in dropbox.node.children | orderBy:'size':true">
 
-                <td class="node-name" ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">
-                    <div class="legend" ng-style="{'background-color' : node.color}"></div>
-                    <img src="/img/placeholder.gif" class="folder-icon"><a href="" ng-click="setPath(node.path)">{{node.path}}</a>
+                <td>
+                    <div style="width:100%">
+                        <div class="node-name" ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">
+                            <div class="legend" ng-style="{'background-color' : node.color}"></div>
+                            <a href="" ng-click="setPath(node.path)"><img src="/img/placeholder.gif" class="folder-icon">{{node.name}}</a>
+                        </div>
+                        <div class="node-name" ng-if="node.type == 'FILE'">
+                            <div class="legend"  ng-style="{'background-color' : node.color}"></div>
+                            <img src="/img/placeholder.gif" class="file-icon">{{node.name}}
+                        </div>
+                    </div>
                 </td>
-                <td class="node-name" ng-if="node.type == 'FILE'">
-                    <div class="legend"  ng-style="{'background-color' : node.color}"></div>
-                    <img src="/img/placeholder.gif" class="file-icon">{{node.path}}
-                </td>
+
+                <!--<td ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">-->
+                    <!--<div >-->
+                    <!--<div class="legend" ng-style="{'background-color' : node.color}"></div>-->
+                    <!--<a href="" ng-click="setPath(node.path)"><img src="/img/placeholder.gif" class="folder-icon">{{node.name}}</a>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td ng-if="node.type == 'FILE'">-->
+                    <!--<div class="node-name">-->
+                    <!--<div class="legend"  ng-style="{'background-color' : node.color}"></div>-->
+                    <!--<img src="/img/placeholder.gif" class="file-icon">{{node.name}}-->
+                    <!--</div>-->
+                <!--</td>-->
 
                 <td>{{node.size | bytes}}</td>
 
                 <td ng-if="node.type == 'DIR'"><a href="https://dropbox.com/home{{node.path}}" target="_blank"><span
                         class="glyphicon glyphicon-link"></span></a></td>
-                <td ng-if="node.type == 'FILE'"></td>
+                <td ng-if="node.type == 'FILE'"><a href="https://dropbox.com/home{{dropbox.node.path}}?select={{node.name.replace(' ', '+')}}" target="_blank"><span
+                        class="glyphicon glyphicon-link"></span></a></td>
             </tr>
             </tbody>
         </table>

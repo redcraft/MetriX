@@ -12,6 +12,24 @@ a {
 	}
 }
 
+@row-height: 29px;
+
+.icon() {
+	width: @row-height;
+	height: @row-height;
+	margin-right: 11px;
+}
+
+.folder-icon {
+	.icon;
+	background-image: url("/img/folder.png");
+}
+
+.file-icon {
+	.icon;
+	background-image: url("/img/file.png");
+}
+
 #metrix-view {
 	width: 1024px;
 	margin: auto
@@ -29,20 +47,22 @@ a {
 		height: @header-height;
 		span {
 			line-height: @header-height;
-			vertical-align: middle;
 		}
 	}
 
 	#user-location {
 		padding-left: 29px;
+		font-size: 18px;
 		span {
 			padding-left: 3px;
-			font-size: 18px;
 		}
-		img {
+		img #logo {
 			width: 32px;
 			height: 32px;
-			margin-top: 4px;
+			margin-top: -4px;
+		}
+		li {
+			padding-left: 6px;
 		}
 	}
 
@@ -112,7 +132,7 @@ a {
 
 		padding-top: 50px;
 
-		#folder-chart {
+		#folder-chart, #no-files {
 			p {
 				text-align: center;
 				margin-top: 9px;
@@ -137,36 +157,24 @@ a {
 		}
 
 		td{
-			.legend {
-				width: 5px;
-				height: 20px;
-				float: left;
-				margin-right: 5px;
-				margin-top: 6px;
+
+			line-height: @row-height;
+			.node-name {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				width: 500px;
+
+				.legend {
+					width: 5px;
+					height: 20px;
+					float: left;
+					margin-right: 5px;
+					margin-top: 6px;
+				}
 			}
 		}
 
-		.node-name {
-			text-overflow: ellipsis;
-			overflow: hidden;
-			white-space: nowrap;
-		}
-
-		.icon() {
-			width: 29px;
-			height: 29px;
-			margin-right: 11px;
-		}
-
-		.folder-icon {
-			.icon;
-			background-image: url("/img/folder.png");
-		}
-
-		.file-icon {
-			.icon;
-			background-image: url("/img/file.png");
-		}
 	}
 
 	@keyframes blink {
