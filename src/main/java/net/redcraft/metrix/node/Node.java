@@ -10,13 +10,15 @@ public class Node implements Comparable<Node> {
 	};
 
 	private final String path;
+	private final String name;
 	private final long size;
 	private final NodeType type;
 	private final boolean complete;
 	private String color;
 
-	public Node(String path, long size, NodeType type, boolean complete) {
+	public Node(String path, String name, long size, NodeType type, boolean complete) {
 		this.path = path;
+		this.name = name;
 		this.size = size;
 		this.type = type;
 		this.complete = complete;
@@ -24,6 +26,10 @@ public class Node implements Comparable<Node> {
 
 	public String getPath() {
 		return path;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public long getSize() {

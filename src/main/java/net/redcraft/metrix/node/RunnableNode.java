@@ -50,7 +50,7 @@ public class RunnableNode implements Runnable {
 	}
 
 	private void childComplete() {
-		complete = children.stream().allMatch((child) -> child.isComplete());
+		complete = children.stream().allMatch(RunnableNode::isComplete);
 		if (complete && parent != null) {
 			parent.childComplete();
 		}
@@ -60,7 +60,7 @@ public class RunnableNode implements Runnable {
 		ColorGenerator colorGenerator = new ColorGenerator();
 		List<Node> nodes = children.stream()
 				.map((child) -> new Node(
-						child.path, child.size.get(),
+						child.path, child.path.substring(child.path.lastIndexOf("/") + 1, child.path.length()), child.size.get(),
 						Node.NodeType.DIR, child.isComplete()))
 				.collect(Collectors.toList());
 		nodes.addAll(getFiles());
@@ -83,8 +83,8 @@ public class RunnableNode implements Runnable {
 	private List<Node> getFiles() {
 		if (files == null) {
 			files = getEntryWithChildren(path).children.stream()
-					.filter(child -> child.isFile())
-					.map(file -> new Node(file.path, file.asFile().numBytes, Node.NodeType.FILE, true))
+					.filter(DbxEntry::isFile)
+					.map(file -> new Node(file.path, file.name, file.asFile().numBytes, Node.NodeType.FILE, true))
 					.collect(Collectors.toList());
 		}
 		return files;
@@ -117,7 +117,7 @@ public class RunnableNode implements Runnable {
 		}
 		else {
 			for(RunnableNode child : children) {
-				if (path.startsWith(child.getPath())) {
+				if (path.toLowerCase().startsWith(child.getPath().toLowerCase())) {
 					runnableNode = child.getNodeForPath(path);
 					if (runnableNode != null) {
 						break;
