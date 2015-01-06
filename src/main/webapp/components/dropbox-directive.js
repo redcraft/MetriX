@@ -19,7 +19,7 @@
 			restrict: 'E',
 			scope: {},
 			templateUrl: 'components/dropbox-template.html',
-			controller: ['$scope', '$location', 'userInfoProvider', '$interval', function ($scope, $location, userInfoProvider, $interval) {
+			controller: ['$scope', '$location', 'userInfoProvider', '$interval', '$timeout', function ($scope, $location, userInfoProvider, $interval, $timeout) {
 
 				var folderChartOptions = {
 					responsive: true,
@@ -114,6 +114,13 @@
 				$scope.setPath = function (path) {
 					$location.search("path", path);
 					userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo);
+				}
+
+				$scope.setLoader = function (node) {
+					$timeout(function() {
+						//$scope.dropbox.node.children[index].showLoader = true;
+						node.showLoader = true;
+					}, 500);
 				}
 
 				$scope.signOut = function () {

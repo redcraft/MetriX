@@ -68,7 +68,7 @@
                     <div style="width:100%">
                         <div class="node-name" ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">
                             <div class="legend" ng-style="{'background-color' : node.color}"></div>
-                            <a href="" ng-click="setPath(node.path)"><img src="/img/placeholder.gif" class="folder-icon">{{node.name}}</a>
+                            <a href="" ng-click="setLoader(node);setPath(node.path)"><img src="/img/placeholder.gif" ng-class="node.showLoader ? 'folder-icon-loader' : 'folder-icon'">{{node.name}}</a>
                         </div>
                         <div class="node-name" ng-if="node.type == 'FILE'">
                             <div class="legend"  ng-style="{'background-color' : node.color}"></div>
@@ -76,19 +76,6 @@
                         </div>
                     </div>
                 </td>
-
-                <!--<td ng-class="{blink : !node.complete}" ng-if="node.type == 'DIR'">-->
-                    <!--<div >-->
-                    <!--<div class="legend" ng-style="{'background-color' : node.color}"></div>-->
-                    <!--<a href="" ng-click="setPath(node.path)"><img src="/img/placeholder.gif" class="folder-icon">{{node.name}}</a>-->
-                    <!--</div>-->
-                <!--</td>-->
-                <!--<td ng-if="node.type == 'FILE'">-->
-                    <!--<div class="node-name">-->
-                    <!--<div class="legend"  ng-style="{'background-color' : node.color}"></div>-->
-                    <!--<img src="/img/placeholder.gif" class="file-icon">{{node.name}}-->
-                    <!--</div>-->
-                <!--</td>-->
 
                 <td>{{node.size | bytes}}</td>
 
