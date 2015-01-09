@@ -1,9 +1,9 @@
 <div ng-show="userInfo">
 <div class="metrix-header">
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-2">
         <img src="img/placeholder.gif">
     </div>
-    <div id="user-location" class="col-md-7">
+    <div id="user-location" class="col-md-7 col-xs-7">
         <a href="/#/"><img id="logo" src="img/metrix_small.png"></a>
         <span ng-if="pathInfo.length < 40" ng-repeat="section in pathInfo.sections">
             <span ng-if="$last" >{{section.name}} </span>
@@ -18,20 +18,23 @@
                 </li>
             </ul>
             <span>/</span>
-            <span ng-init="folderName = pathInfo.sections[pathInfo.sections.length - 1].name">{{folderName.length > 40 ? folderName.substr(0, 40) + "..." : folderName}}</span>
+            <span>{{
+                pathInfo.sections[pathInfo.sections.length - 1].name.length > 40 ?
+                pathInfo.sections[pathInfo.sections.length - 1].name.substr(0, 40) + "..." :
+                pathInfo.sections[pathInfo.sections.length - 1].name}}</span>
         </span>
     </div>
-    <div id="header-menu" class="col-md-1">
+    <div id="header-menu" class="col-md-1 col-xs-1">
     <span>
         <a href="" ng-click="signOut()" >Sign out</a>
     </span>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-2">
         <img src="img/placeholder.gif">
     </div>
 </div>
 <div id="dropbox">
-    <div id="charts-panel" class="col-md-2">
+    <div id="charts-panel" class="col-md-2 col-xs-2">
 
         <div ng-if="folderData && totalSize != 0" id="folder-chart">
             <canvas tc-chartjs-pie chart-options="folderChartOptions" chart-data="folderData" width="200"
@@ -52,7 +55,7 @@
         </div>
 
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-xs-8">
         <table id="dropbox-item-list" class="table">
             <thead>
             <tr>
@@ -87,7 +90,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-1">
         <img src="img/placeholder.gif">
     </div>
 </div>

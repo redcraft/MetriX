@@ -40,12 +40,20 @@
 				$scope.folderChartOptions = folderChartOptions;
 				$scope.globalProgressChartOptions = globalProgressChartOptions;
 
+				var stop = undefined;
+				var unwatch = undefined;
+
 				var getFolderInfo = function (dropbox) {
 					$scope.dropbox = dropbox;
 					var chartData = [];
 					var pathSections = [{name: "Dropbox", path: "/"}];
 					var totalSize = 0;
 					var fileSize = 0;
+
+					if (dropbox.node.path == '/' && dropbox.node.complete && angular.isDefined(stop)) {
+						$interval.cancel(stop);
+						stop = undefined;
+					}
 
 					angular.forEach(dropbox.node.children, function (value, key) {
 						if (value.type === 'DIR') {
@@ -97,8 +105,6 @@
 
 				};
 
-				var stop = undefined;
-				var unwatch = undefined;
 				userInfoProvider.getAsyncUserInfo().then(function (data) {
 					$scope.userInfo = data;
 					stop = $interval(function () {
@@ -113,7 +119,6 @@
 
 				$scope.setPath = function (path) {
 					$location.search("path", path);
-					userInfoProvider.getDropboxStats($location.search().path).then(getFolderInfo);
 				}
 
 				$scope.setLoader = function (node) {
