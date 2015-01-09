@@ -82,9 +82,9 @@
 
                 <td>{{node.size | bytes}}</td>
 
-                <td ng-if="node.type == 'DIR'"><a href="https://dropbox.com/home{{node.path}}" target="_blank"><span
+                <td ng-if="node.type == 'DIR'"><a href='https://dropbox.com/home{{encode(node.path)}}' target="_blank"><span
                         class="glyphicon glyphicon-link"></span></a></td>
-                <td ng-if="node.type == 'FILE'"><a href="https://dropbox.com/home{{dropbox.node.path}}?select={{node.name.replace(' ', '+')}}" target="_blank"><span
+                <td ng-if="node.type == 'FILE'"><a href="https://dropbox.com/home{{encode(dropbox.node.path)}}?select={{node.name.replace(' ', '+')}}" target="_blank"><span
                         class="glyphicon glyphicon-link"></span></a></td>
             </tr>
             </tbody>

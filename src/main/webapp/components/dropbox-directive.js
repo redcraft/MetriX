@@ -132,6 +132,10 @@
 					userInfoProvider.logout();
 				}
 
+				$scope.encode = function(URI) {
+					return URI.replace('$', '%24');
+				};
+
 				$scope.$on('$destroy', function () {
 					if (angular.isDefined(stop)) {
 						$interval.cancel(stop);
