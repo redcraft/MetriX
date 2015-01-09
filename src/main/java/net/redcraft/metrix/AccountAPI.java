@@ -25,15 +25,21 @@ public class AccountAPI {
 
 	class Stats {
 		private final long total;
+		private final boolean complete;
 		private final RunnableNode node;
 
-		public Stats(long total, RunnableNode node) {
+		public Stats(long total, boolean complete, RunnableNode node) {
 			this.total = total;
+			this.complete = complete;
 			this.node = node;
 		}
 
 		public long getTotal() {
 			return total;
+		}
+
+		public boolean isComplete() {
+			return complete;
 		}
 
 		public RunnableNode getNode() {
@@ -70,7 +76,7 @@ public class AccountAPI {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Stats getStats(@QueryParam("path") String path) {
 		RunnableNode node = rootNodeProvider.get();
-		return new Stats(node.getSize(), node.getNodeForPath(path));
+		return new Stats(node.getSize(), node.isComplete(), node.getNodeForPath(path));
 	}
 
 	/**

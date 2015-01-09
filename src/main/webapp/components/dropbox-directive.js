@@ -50,7 +50,7 @@
 					var totalSize = 0;
 					var fileSize = 0;
 
-					if (dropbox.node.path == '/' && dropbox.node.complete && angular.isDefined(stop)) {
+					if (dropbox.node.path == '/' && dropbox.complete && angular.isDefined(stop)) {
 						$interval.cancel(stop);
 						stop = undefined;
 					}
