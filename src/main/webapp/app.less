@@ -37,16 +37,16 @@ a {
 
 #metrix-view {
 	width: 1024px;
-	margin: auto
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .metrix-header {
 	@header-height: 36px;
 
 	margin-top: 16px;
-	margin-bottom: 60px;
+	margin-bottom: 10px;
 	padding-bottom: 1px;
-	&:extend(#metrix-view);
 
 	div {
 		height: @header-height;
@@ -61,10 +61,10 @@ a {
 		span {
 			padding-left: 3px;
 		}
-		img #logo {
-			width: 32px;
-			height: 32px;
-			margin-top: -4px;
+		div {
+			width: 33px;
+			height: 33px;
+			float: left;
 		}
 		ul {
 			text-overflow: ellipsis;

@@ -1,10 +1,10 @@
 <div ng-show="userInfo">
-<div class="metrix-header">
-    <div class="col-md-2">
+<div class="metrix-header row">
+    <div class="col-md-2 col-xs-2">
         <img src="img/placeholder.gif">
     </div>
-    <div id="user-location" class="col-md-7">
-        <a href="/#/"><img id="logo" src="img/metrix_small.png"></a>
+    <div id="user-location" class="col-md-6 col-xs-6">
+        <div><a href="/#/"><img id="logo" src="img/metrix_small.png"></a></div>
         <span ng-if="pathInfo.length < 40" ng-repeat="section in pathInfo.sections">
             <span ng-if="$last" >{{section.name}} </span>
             <span><a ng-if="!$last" href="" ng-click="setPath(section.path)">{{section.name}} </a></span>
@@ -24,17 +24,17 @@
                 pathInfo.sections[pathInfo.sections.length - 1].name}}</span>
         </span>
     </div>
-    <div id="header-menu" class="col-md-1">
+    <div id="header-menu" class="col-md-2 col-xs-2">
     <span>
         <a href="" ng-click="signOut()" >Sign out</a>
     </span>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-2">
         <img src="img/placeholder.gif">
     </div>
 </div>
-<div id="dropbox">
-    <div id="charts-panel" class="col-md-2">
+<div id="dropbox" class="row">
+    <div id="charts-panel" class="col-md-2 col-xs-2">
 
         <div ng-if="folderData && totalSize != 0" id="folder-chart">
             <canvas tc-chartjs-pie chart-options="folderChartOptions" chart-data="folderData" width="200"
@@ -55,7 +55,7 @@
         </div>
 
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-xs-8">
         <table id="dropbox-item-list" class="table">
             <thead>
             <tr>
@@ -90,7 +90,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-1">
         <img src="img/placeholder.gif">
     </div>
 </div>
