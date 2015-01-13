@@ -89,7 +89,7 @@
 					if(angular.isDefined($scope.userInfo)) {
 						$scope.globalProgressData = [
 							{
-								value: $scope.userInfo.quota.normal - $scope.dropbox.total,
+								value: $scope.userInfo.quota.normal + $scope.userInfo.quota.shared - $scope.dropbox.total,
 								color:'#f3f9fe'
 							},
 							{

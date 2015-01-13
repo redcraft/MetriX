@@ -50,8 +50,8 @@
             <div>
                 <canvas  tc-chartjs-doughnut chart-options="globalProgressChartOptions" chart-data="globalProgressData"></canvas>
             </div>
-            <p>Complete {{dropbox.total / userInfo.quota.normal * 100 | number : 1}}%</p>
-            <p>{{dropbox.total | bytes}} of {{userInfo.quota.normal | bytes}}</p>
+            <p>Complete {{dropbox.total / (userInfo.quota.normal + userInfo.quota.shared) * 100 | number : 1}}%</p>
+            <p>{{dropbox.total | bytes}} of {{(userInfo.quota.normal + userInfo.quota.shared) | bytes}}</p>
         </div>
 
     </div>
