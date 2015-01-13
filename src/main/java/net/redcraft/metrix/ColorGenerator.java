@@ -19,7 +19,7 @@ public class ColorGenerator {
 			"#FFDC00", "#FF851B", "#FF4136", "#F012BE", "#B10DC9",
 			"#85144B", "#ccad99", "#ffa280", "#99614d", "#a64200",
 			"#4c2900", "#f29d3d", "#bfa330", "#a9bf8f", "#434f59",
-			"#fbbfff", "#8d5ba6", "#c7f218",  "#b2d916", "#12b395"
+			"#fbbfff", "#8d5ba6", "#c7f218",  "#b2d916"
 	);
 	private static final String[] LATTERS = "0123456789ABCDEF".split("");
 	private final Queue<String> colorQueue = new LinkedList<>(DEFAULT_COLORS);

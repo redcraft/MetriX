@@ -60,7 +60,6 @@
 							this.push({
 								value: value.size,
 								color: value.color,
-								highlight: '#FF5A5E',
 								label: value.path
 							});
 						}
@@ -71,8 +70,7 @@
 					}, chartData);
 					chartData.push({
 						value: fileSize,
-						color: '#F7464A',
-						highlight: '#FF5A5E',
+						color: '#12b395',
 						label: 'Files'
 					});
 
