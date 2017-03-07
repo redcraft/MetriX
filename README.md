@@ -36,11 +36,11 @@ If you are running on Heroku also add the following variables:
 
 If you are building on your own machine, run the following command to build artifact
 ```sh
-$ mvn clean && grunt && mvn package
+$ mvn clean && npm install && grunt && mvn package
 ```
 or just run command below to start service in jetty
 ```sh
-$ mvn clean && grunt && mvn jetty:run
+$ mvn clean && npm install && grunt && mvn jetty:run
 ```
 
 That's it. Thanks for your interest :-)
