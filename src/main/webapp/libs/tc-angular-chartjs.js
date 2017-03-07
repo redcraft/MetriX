@@ -1,6 +1,6 @@
 /**
- * tc-angular-chartjs - v1.0.9 - 2014-10-14
- * Copyright (c) 2014 Carl Craig <carlcraig@3c-studios.com>
+ * tc-angular-chartjs - v1.0.16 - 2016-06-03
+ * Copyright (c) 2016 Carl Craig <carlcraig.threeceestudios@gmail.com>
  * Dual licensed with the Apache-2.0 or MIT license.
  */
 (function() {
@@ -36,18 +36,18 @@
     TcChartjsDoughnut.$inject = [ "TcChartjsFactory" ];
     function TcChartjsFactory() {
         return function(chartType) {
-            var directive = {
+            return {
                 restrict: "A",
                 scope: {
                     data: "=chartData",
                     options: "=chartOptions",
                     type: "@chartType",
-                    legend: "=chartLegend",
-                    chart: "=chart"
+                    legend: "=?chartLegend",
+                    chart: "=?chart",
+                    click: "&chartClick"
                 },
                 link: link
             };
-            return directive;
             function link($scope, $elem, $attrs) {
                 var ctx = $elem[0].getContext("2d");
                 var chart = new Chart(ctx);
@@ -65,9 +65,30 @@
                         autoLegend = true;
                     }
                 }
+                $scope.$on("$destroy", function() {
+                    if (chartObj && typeof chartObj.destroy === "function") {
+                        chartObj.destroy();
+                    }
+                });
+                if ($scope.click) {
+                    $elem[0].onclick = function(evt) {
+                        var segment;
+                        if (chartObj.getSegmentsAtEvent !== undefined) {
+                            segment = chartObj.getSegmentsAtEvent(evt);
+                        } else if (chartObj.getPointsAtEvent !== undefined) {
+                            segment = chartObj.getPointsAtEvent(evt);
+                        } else if (chartObj.getBarsAtEvent !== undefined) {
+                            segment = chartObj.getBarsAtEvent(evt);
+                        }
+                        $scope.click({
+                            data: segment,
+                            event: evt
+                        });
+                    };
+                }
                 $scope.$watch("data", function(value) {
                     if (value) {
-                        if (chartObj) {
+                        if (chartObj && typeof chartObj.destroy === "function") {
                             chartObj.destroy();
                         }
                         if (chartType) {
@@ -89,6 +110,11 @@
                         }
                         if (exposeChart) {
                             $scope.chart = chartObj;
+                        }
+                        if (angular.isFunction(chartObj.update)) {
+                            chartObj.update();
+                        } else {
+                            chartObj.resize();
                         }
                     }
                 }, true);
@@ -121,14 +147,13 @@
         };
     }
     function TcChartjsLegend() {
-        var directive = {
+        return {
             restrict: "A",
             scope: {
-                legend: "=chartLegend"
+                legend: "=?chartLegend"
             },
             link: link
         };
-        return directive;
         function link($scope, $elem) {
             $scope.$watch("legend", function(value) {
                 if (value) {

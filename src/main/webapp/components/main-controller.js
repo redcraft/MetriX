@@ -3,10 +3,10 @@
 (function () {
 	var app = angular.module('metrix');
 
-	app.controller('mainController', ['$location', 'userInfoProvider', '$scope', '$modal', function ($location, userInfoProvider, $scope, $modal) {
+	app.controller('mainController', ['$location', 'userInfoProvider', '$scope', '$uibModal', function ($location, userInfoProvider, $scope, $uibModal) {
 
 		$scope.$on("INTERNAL_SERVER_ERROR", function (event, traceId) {
-			$modal.open({
+			$uibModal.open({
 				templateUrl: 'components/error-template.html',
 				controller: ['$scope', '$modalInstance', 'traceId', function ($scope, $modalInstance, traceId) {
 					$scope.traceId = traceId;
