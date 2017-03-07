@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="260px" viewBox="0 0 300 260" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>metrix</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="153 171 223.00074 211 152.997475 250.994949 83 211"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.00074" height="79.9949494" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <polygon id="path-3" points="153 91 223 131 223 211 153 171"></polygon>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="120" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <polygon id="path-5" points="83 91 153 131 153 211 83 171"></polygon>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="120" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <polygon id="path-7" points="83 131 153 171 153 251 83 211"></polygon>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="120" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <polygon id="path-9" points="153 131 223 171 223 251 153 211"></polygon>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="120" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <polygon id="path-11" points="153 91 223.00074 131 152.997475 170.994949 83 131"></polygon>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140.00074" height="79.9949494" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(-100.000000, -29.000000)">
+            <g transform="translate(97.000000, 32.000000)">
+                <use id="bottom" stroke="#A7D8FF" mask="url(#mask-2)" fill="#49ABFB" opacity="0.702841938" xlink:href="#path-1"></use>
+                <use id="right---back" stroke="#A7D8FF" mask="url(#mask-4)" fill="#49ABFB" opacity="0.702841938" xlink:href="#path-3"></use>
+                <use id="left---back" stroke="#A7D8FF" mask="url(#mask-6)" fill="#49ABFB" opacity="0.702841938" transform="translate(118.000000, 151.000000) scale(-1, 1) translate(-118.000000, -151.000000) " xlink:href="#path-5"></use>
+                <g id="Top-Arrow" transform="translate(146.000000, 0.000000)">
+                    <path d="M7,171 L7,11" id="Line-Copy-3" stroke="#A7D8FF" stroke-width="2" stroke-linecap="round"></path>
+                    <polygon id="Triangle" fill="#A7D8FF" points="7 0 14 12 0 12"></polygon>
+                </g>
+                <g id="Left-Arrow" transform="translate(0.000000, 171.000000)">
+                    <path d="M13.3080663,79.77421 L152.707517,0.172983159" id="Line" stroke="#A7D8FF" stroke-width="2" stroke-linecap="round"></path>
+                    <polygon id="Triangle-Copy" fill="#A7D8FF" transform="translate(9.152579, 82.097857) rotate(-120.000000) translate(-9.152579, -82.097857) " points="9.15257896 76.0978565 16.152579 88.0978565 2.15257896 88.0978565"></polygon>
+                </g>
+                <g id="Right-Arrow" transform="translate(153.000000, 171.000000)">
+                    <path d="M0.308066283,79.77421 L139.707517,0.172983159" id="Line-Copy-2" stroke="#A7D8FF" stroke-width="2" stroke-linecap="round" transform="translate(70.007792, 39.973597) scale(-1, 1) translate(-70.007792, -39.973597) "></path>
+                    <polygon id="Triangle-Copy-2" fill="#A7D8FF" transform="translate(143.696152, 82.062178) scale(-1, 1) rotate(-120.000000) translate(-143.696152, -82.062178) " points="143.696152 76.0621778 150.696152 88.0621778 136.696152 88.0621778"></polygon>
+                </g>
+                <use id="left---front" stroke="#A7D8FF" mask="url(#mask-8)" fill="#4EAEFB" opacity="0.899003623" xlink:href="#path-7"></use>
+                <use id="right---front" stroke="#A7D8FF" mask="url(#mask-10)" fill="#5DB7FF" opacity="0.902456975" transform="translate(188.000000, 191.000000) scale(-1, 1) translate(-188.000000, -191.000000) " xlink:href="#path-9"></use>
+                <use id="top" stroke="#A7D8FF" mask="url(#mask-12)" fill="#73BFFC" opacity="0.899003623" xlink:href="#path-11"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>folder</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,5.00790281 C0,3.90333331 0.886158887,3.00790281 2.0062186,3.00790281 L2.0062186,3.00790281 C2.55935392,3.00790281 3.0077587,2.56407639 3.0077587,2.00631473 L3.0077587,2.00631473 C3.0077587,0.8982577 3.90729994,3.30897445e-16 4.99837067,2.86337016e-16 L12.009388,-6.16297582e-33 C13.1087727,-4.48999768e-17 14,0.886201346 14,2.00631473 L14,2.00631473 C14,2.55947655 14.4499488,3.00790281 15.0068455,3.00790281 L25.9941413,3.00790281 C27.1019465,3.00790281 28,3.89563245 28,5.00790281 L28,7.00790281 L0,7.00790281 L0,5.00790281 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28" height="7.00790281" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M0,6 L28,6 L28,23.0025781 C28,24.1057238 27.1001025,25 26.0087557,25 L1.99124431,25 C0.891510444,25 0,24.1090746 0,23.0025781 L0,6 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28" height="19" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Folder" stroke="#73B2E6" stroke-width="2">
+            <g id="Folder-Icon" transform="translate(0.000000, 2.000000)">
+                <use id="Rectangle-2" mask="url(#mask-2)" fill="#CCE5FA" xlink:href="#path-1"></use>
+                <use id="Rectangle" mask="url(#mask-4)" fill="#F3F9FE" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

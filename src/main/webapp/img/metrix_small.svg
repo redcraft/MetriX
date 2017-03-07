@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>metrix_small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="14 16 28.0001479 24 13.9994949 31.9989899 -1.13686838e-14 24"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28.0001479" height="15.9989899" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <polygon id="path-3" points="14 0 28 8 28 24 14 16"></polygon>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="24" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <polygon id="path-5" points="0 0 14 8 14 24 0 16"></polygon>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="24" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <polygon id="path-7" points="0 8 14 16 14 32 0 24"></polygon>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="24" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <polygon id="path-9" points="14 8 28 16 28 32 14 24"></polygon>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="24" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <polygon id="path-11" points="14 -2.38742359e-13 28.0001479 8 13.9994949 15.9989899 -5.68434189e-15 8"></polygon>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28.0001479" height="15.9989899" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo-Small" stroke="#A7D8FF" stroke-width="0.6">
+            <g id="Logo" transform="translate(2.000000, 0.000000)">
+                <use id="bottom" mask="url(#mask-2)" fill="#49ABFB" opacity="0.702841938" xlink:href="#path-1"></use>
+                <use id="right---back" mask="url(#mask-4)" fill="#49ABFB" opacity="0.702841938" xlink:href="#path-3"></use>
+                <use id="left---back" mask="url(#mask-6)" fill="#49ABFB" opacity="0.702841938" transform="translate(7.000000, 12.000000) scale(-1, 1) translate(-7.000000, -12.000000) " xlink:href="#path-5"></use>
+                <use id="left---front" mask="url(#mask-8)" fill="#4EAEFB" opacity="0.899003623" xlink:href="#path-7"></use>
+                <use id="right---front" mask="url(#mask-10)" fill="#5DB7FF" opacity="0.902456975" transform="translate(21.000000, 20.000000) scale(-1, 1) translate(-21.000000, -20.000000) " xlink:href="#path-9"></use>
+                <use id="top" mask="url(#mask-12)" fill="#73BFFC" opacity="0.899003623" xlink:href="#path-11"></use>
+            </g>
+        </g>
+    </g>
+</svg>
