@@ -43,27 +43,27 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>16.0.1</version>
+            <version>21.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.7</version>
+            <version>1.7.24</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.2</version>
+            <version>1.2.1</version>
         </dependency>
         <dependency>
             <groupId>com.dropbox.core</groupId>
             <artifactId>dropbox-core-sdk</artifactId>
-            <version>[1.7,1.8)</version>
+            <version>[1.8,1.9)</version>
         </dependency>
         <dependency>
             <groupId>com.mycila.guice.extensions</groupId>
             <artifactId>mycila-guice-jsr250</artifactId>
-            <version>3.4.ga</version>
+            <version>3.6.ga</version>
         </dependency>
 
     </dependencies>
@@ -124,7 +124,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.7</version>
+                        <version>1.8</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -173,10 +173,9 @@
 
 
     <properties>
-        <jersey.version>1.18.1</jersey.version>
+        <jersey.version>1.19.3</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jetty.version>9.2.4.v20141103</jetty.version>
-        <guice.version>3.0</guice.version>
+        <jetty.version>9.4.2.v20170220</jetty.version>
     </properties>
 
 
