@@ -1,0 +1,20 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "redcraft/metrix",
+    "Update": "true"
+  },
+  "volumes": [
+    {
+      "name": "maven-repository",
+      "host": {
+        "sourcePath": "/root/.m2"
+      }
+    }
+  ],
+  "Ports": [
+    {
+      "ContainerPort": "8080"
+    }
+  ]
+}
